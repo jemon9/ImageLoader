@@ -57,7 +57,7 @@ public class ImageLoader {
     private boolean mIsDiskCacheCreated = false;
     private ImageResizer mImageResizer = new ImageResizer();
     private DiskLruCache mDiskLruCache;
-    private static LruCache<String, Bitmap> mMemoryCache;
+    private LruCache<String, Bitmap> mMemoryCache;
     private Context mContext;
 
     /**
@@ -65,7 +65,6 @@ public class ImageLoader {
      */
     private static final ThreadFactory mThreadFactory = new ThreadFactory() {
         private final AtomicInteger mCount = new AtomicInteger(1);
-
         @Override
         public Thread newThread(Runnable r) {
             return new Thread(r, "ImageLoader#" + mCount.getAndIncrement());
